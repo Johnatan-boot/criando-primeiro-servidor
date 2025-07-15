@@ -27,11 +27,12 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 app.get('/study', (req, res) => {
-  res.send('study funciona!')
-})
+  res.sendFile(path.join(__dirname, 'public', 'study.html'));
+});
 app.get('/give-classes', (req, res) => {
-  res.send('give-class funciona!')
-})
+  res.sendFile(path.join(__dirname, 'public', 'give-classes.html'));
+});
+
 
 /*Rodando o servidor
 Como podemos fazer para que nosso servidor fique rodando eternamente até o mesmo ser parado? Para isso temos a função listen do http, ela recebe como primeiro parâmetro a porta que o servidor ficará escutando (aguardando requisições) e como segundo parâmetro devemos passar uma função de callback (que será executada após o servidor estiver rodando).
