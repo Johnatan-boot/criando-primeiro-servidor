@@ -1,3 +1,5 @@
+const path = require("path");
+
 //esta linha significa que o node.js vai fazer importação de modulos require significa -> importação
 const http = require("http");
 //proximo passo
@@ -14,7 +16,7 @@ const app = express();
 /*Subindo o servidor
 Agora que já temos tudo que precisamos vamos de fato subir nosso servidor.
 Conforme dito anteriormante, para subir nosso servidor vamos utilizar o módulo do http, através dele temos uma função chamada createServer onde devemos passar um servidor para ele, mas, quem será nosso servidor? Sim, se você pensou no express parabéns, você acertou.*/
-http.createServer(express);
+//http.createServer(express); trecho desnecessario
 
 // Servir arquivos estáticos (CSS, JS, imagens)
 app.use(express.static(path.join(__dirname, 'public')));
@@ -39,7 +41,10 @@ Como podemos fazer para que nosso servidor fique rodando eternamente até o mesm
 */
 //http.createServer(express).listen(3000, () => console.log("Servidor rodando local na porta 3000"));
 /*Agora por último, na função createServer devemos passar agora o app e não mais o express:*/
-http.createServer(app).listen(3000, () => console.log("Servidor rodando local na porta 3000"));
+//http.createServer(app).listen(3000, () => console.log("Servidor rodando local na porta 3000"));
+
+app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
+
 
 
 
